@@ -42,7 +42,7 @@ CMD ["npm","run","dev"]
 
 # docker run -p 8080:80 --name inginx --rm -v //C/php/vue/Qsql2/dist:/usr/share/nginx/html:ro  nginx
 
-/usr/share/nginx/html:ro
+#/usr/share/nginx/html:ro
 
 #The other problem is that the webpack-dev-server is using "localhost" for a host, which needs to be "0.0.0.0" to work in Docker. You can overwrite the host config using an environment variable, so try this command instead:
 
