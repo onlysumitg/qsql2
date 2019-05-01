@@ -1,0 +1,15 @@
+# super user permission for docker
+
+sudo: required
+
+# tell travis that we need docker
+services:
+  - docker
+
+before_install:
+  - docker build -t sgoyal/qsql -f Dockerfile.dev .
+
+# contains all the cmds to run test scripts
+# -- --coverage mmake sure that npm run test exit after 1 run
+script:
+  - docker run sgoyal/qsql npm run test -- --coverage
